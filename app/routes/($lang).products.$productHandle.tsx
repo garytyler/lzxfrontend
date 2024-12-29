@@ -27,6 +27,8 @@ import {ModuleDetails} from '~/components/ModuleDetails';
 import {Heading, Text} from '~/components/Text';
 import {getModuleDetails} from '~/controllers/get_module_details';
 import {MEDIA_FRAGMENT, PRODUCT_CARD_FRAGMENT} from '~/data/fragments';
+import {seoPayload} from '~/lib/seo.server.js';
+import type {ModuleView} from '~/views/module.js';
 
 export async function loader({params, request, context}: LoaderFunctionArgs) {
   const {productHandle} = params;
