@@ -26,11 +26,11 @@ import {getFeaturedData} from './($lang).featured-products';
 import {AccountAddressBook} from '~/components/AccountAddressBook';
 import {AccountDetails} from '~/components/AccountDetails';
 import {Button} from '~/components/Button';
-import {OrderCard} from '~/components/OrderCard';
-import {Text, PageHeader} from '~/components/Text';
-import {Modal} from '~/components/Modal';
-import {ProductSwimlane} from '~/components/ProductSwimlane';
 import {FeaturedCollections} from '~/components/FeaturedCollections';
+import {Modal} from '~/components/Modal';
+import {OrderCard} from '~/components/OrderCard';
+import {ProductSwimlane} from '~/components/ProductSwimlane';
+import {Text, PageHeader} from '~/components/Text';
 import {CACHE_NONE, routeHeaders} from '~/data/cache';
 import {usePrefixPathWithLocale} from '~/lib/utils';
 

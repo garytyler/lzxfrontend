@@ -1,29 +1,30 @@
+import {Listbox} from '@headlessui/react';
 import {
   useLoaderData,
-  useSearchParams,
   useLocation,
   useNavigation,
+  useSearchParams,
 } from '@remix-run/react';
 import type {SeoConfig, ShopifyAnalyticsProduct} from '@shopify/hydrogen';
 import {AnalyticsPageType, getSeoMeta, Money} from '@shopify/hydrogen';
 import type {
+  ProductConnection,
+  Product as ProductType,
   ProductVariant,
   SelectedOptionInput,
-  Product as ProductType,
   Shop,
-  ProductConnection,
 } from '@shopify/hydrogen/storefront-api-types';
-import type {MetaArgs, type LoaderFunctionArgs} from '@shopify/remix-oxygen';
+import type {LoaderFunctionArgs, MetaArgs} from '@shopify/remix-oxygen';
 import {defer} from '@shopify/remix-oxygen';
 import clsx from 'clsx';
 import {type ReactNode, useRef} from 'react';
 import invariant from 'tiny-invariant';
 import {AddToCartButton} from '~/components/AddToCartButton';
 import {Button} from '~/components/Button';
-import {Heading} from '~/components/Heading';
 import {IconCaret, IconCheck} from '~/components/Icon';
 import {Link} from '~/components/Link';
 import {ModuleDetails} from '~/components/ModuleDetails';
+import {Heading, Text} from '~/components/Text';
 import {getModuleDetails} from '~/controllers/get_module_details';
 import {MEDIA_FRAGMENT, PRODUCT_CARD_FRAGMENT} from '~/data/fragments';
 
