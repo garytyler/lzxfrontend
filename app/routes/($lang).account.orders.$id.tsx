@@ -1,22 +1,18 @@
-import invariant from 'tiny-invariant';
-import clsx from 'clsx';
-import {json, redirect, type LoaderFunctionArgs} from '@shopify/remix-oxygen';
-import {useLoaderData, type V2_MetaFunction} from '@remix-run/react';
+import {useLoaderData} from '@remix-run/react';
 import {Money, Image, flattenConnection} from '@shopify/hydrogen';
-import {statusMessage} from '~/lib/utils';
-import {MoneyV2} from '@shopify/hydrogen/storefront-api-types';
 import type {
   Order,
   OrderLineItem,
   DiscountApplicationConnection,
 } from '@shopify/hydrogen/storefront-api-types';
-import {Link, Heading, PageHeader, Text} from '~/components';
+import {json, redirect, type LoaderFunctionArgs} from '@shopify/remix-oxygen';
+import clsx from 'clsx';
+import invariant from 'tiny-invariant';
+import {Link} from '~/components/Link';
+import {Heading, PageHeader, Text} from '~/components/Text';
+import {statusMessage} from '~/lib/utils';
 
-export const meta: V2_MetaFunction<typeof loader> = ({data}) => {
-  return [{title: `Order ${data?.order?.name}`}];
-};
-
-export async function loader({request, context, params}: LoaderFunctionArgs) {
+const loader = async ({request, context, params}: LoaderFunctionArgs) => {
   if (!params.id) {
     return redirect(params?.lang ? `${params.lang}/account` : '/account');
   }
@@ -68,7 +64,7 @@ export async function loader({request, context, params}: LoaderFunctionArgs) {
     discountValue,
     discountPercentage,
   });
-}
+};
 
 export default function OrderRoute() {
   const {order, lineItems, discountValue, discountPercentage} =

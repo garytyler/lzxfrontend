@@ -1,11 +1,12 @@
-import {json, type LoaderFunctionArgs} from '@shopify/remix-oxygen';
 import {useLoaderData} from '@remix-run/react';
 import {flattenConnection, Image} from '@shopify/hydrogen';
 import type {Article, Blog} from '@shopify/hydrogen/storefront-api-types';
-import {Grid, PageHeader, Section, Link} from '~/components';
+import {json, type LoaderFunctionArgs} from '@shopify/remix-oxygen';
+import {Grid} from '~/components/Grid';
+import {Section, PageHeader} from '~/components/Text';
+import {CACHE_LONG, routeHeaders} from '~/data/cache';
 import {getImageLoadingPriority, PAGINATION_SIZE} from '~/lib/const';
 import {seoPayload} from '~/lib/seo.server';
-import {CACHE_LONG, routeHeaders} from '~/data/cache';
 
 const BLOG_HANDLE = 'Journal';
 

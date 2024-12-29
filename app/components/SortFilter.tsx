@@ -1,8 +1,4 @@
-import type {SyntheticEvent} from 'react';
-import {useMemo, useState} from 'react';
 import {Menu, Disclosure} from '@headlessui/react';
-
-import {Heading, IconFilters, IconCaret, IconXMark, Text} from '~/components';
 import type {Location} from '@remix-run/react';
 import {
   Link,
@@ -10,13 +6,17 @@ import {
   useSearchParams,
   useNavigate,
 } from '@remix-run/react';
-import {useDebounce} from 'react-use';
 
 import type {
   FilterType,
   Filter,
   Collection,
 } from '@shopify/hydrogen/storefront-api-types';
+import {useMemo, useState} from 'react';
+import type {SyntheticEvent} from 'react';
+import {useDebounce} from 'react-use';
+import {IconFilters, IconCaret, IconXMark} from '~/components/Icon';
+import {Heading, Text} from '~/components/Text';
 
 export type AppliedFilter = {
   label: string;

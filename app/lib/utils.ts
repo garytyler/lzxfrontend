@@ -1,5 +1,4 @@
 import {useLocation, useMatches} from '@remix-run/react';
-import {parse as parseCookie} from 'worktop/cookie';
 import type {
   MenuItem,
   Menu,
@@ -8,9 +7,10 @@ import type {
 
 // @ts-expect-error types not available
 import typographicBase from 'typographic-base';
-import {countries} from '~/data/countries';
+import {parse as parseCookie} from 'worktop/cookie';
 import type {I18nLocale} from './type';
 import {Locale} from './type';
+import {countries} from '~/data/countries';
 
 export interface EnhancedMenuItem extends MenuItem {
   to: string;

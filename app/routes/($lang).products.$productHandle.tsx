@@ -1,40 +1,11 @@
-import {type ReactNode, useRef, Suspense, useMemo} from 'react';
-import {Disclosure, Listbox} from '@headlessui/react';
-import type {MetaArgs, type LoaderFunctionArgs} from '@shopify/remix-oxygen';
-import {json, defer} from '@shopify/remix-oxygen';
 import {
   useLoaderData,
-  Await,
   useSearchParams,
   useLocation,
   useNavigation,
 } from '@remix-run/react';
-
 import type {SeoConfig, ShopifyAnalyticsProduct} from '@shopify/hydrogen';
-import {
-  AnalyticsPageType,
-  getSeoMeta,
-  Money,
-  ShopPayButton,
-} from '@shopify/hydrogen';
-import {
-  Heading,
-  IconCaret,
-  IconCheck,
-  IconClose,
-  ProductGallery,
-  ProductSwimlane,
-  Section,
-  Skeleton,
-  Text,
-  Link,
-  AddToCartButton,
-  Button,
-} from '~/components';
-import {getExcerpt} from '~/lib/utils';
-import {seoPayload} from '~/lib/seo.server';
-import invariant from 'tiny-invariant';
-import clsx from 'clsx';
+import {AnalyticsPageType, getSeoMeta, Money} from '@shopify/hydrogen';
 import type {
   ProductVariant,
   SelectedOptionInput,
@@ -42,13 +13,19 @@ import type {
   Shop,
   ProductConnection,
 } from '@shopify/hydrogen/storefront-api-types';
-import {MEDIA_FRAGMENT, PRODUCT_CARD_FRAGMENT} from '~/data/fragments';
-import type {Storefront} from '~/lib/type';
-import type {Product} from 'schema-dts';
+import type {MetaArgs, type LoaderFunctionArgs} from '@shopify/remix-oxygen';
+import {defer} from '@shopify/remix-oxygen';
+import clsx from 'clsx';
+import {type ReactNode, useRef} from 'react';
+import invariant from 'tiny-invariant';
+import {AddToCartButton} from '~/components/AddToCartButton';
+import {Button} from '~/components/Button';
+import {Heading} from '~/components/Heading';
+import {IconCaret, IconCheck} from '~/components/Icon';
+import {Link} from '~/components/Link';
 import {ModuleDetails} from '~/components/ModuleDetails';
-import type {ModuleView} from '~/views/module';
 import {getModuleDetails} from '~/controllers/get_module_details';
-import {ModuleGallery} from '~/components/ModuleGallery';
+import {MEDIA_FRAGMENT, PRODUCT_CARD_FRAGMENT} from '~/data/fragments';
 
 export async function loader({params, request, context}: LoaderFunctionArgs) {
   const {productHandle} = params;

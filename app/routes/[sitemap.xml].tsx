@@ -1,10 +1,10 @@
 import {flattenConnection} from '@shopify/hydrogen';
-import type {LoaderFunctionArgs} from '@shopify/remix-oxygen';
 import type {
   CollectionConnection,
   PageConnection,
   ProductConnection,
 } from '@shopify/hydrogen/storefront-api-types';
+import type {LoaderFunctionArgs} from '@shopify/remix-oxygen';
 import invariant from 'tiny-invariant';
 
 const MAX_URLS = 250; // the google limit is 50K, however, SF API only allow querying for 250 resources each time

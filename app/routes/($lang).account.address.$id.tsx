@@ -1,4 +1,3 @@
-import {json, redirect, type ActionFunction} from '@shopify/remix-oxygen';
 import {
   Form,
   useActionData,
@@ -14,10 +13,12 @@ import type {
   CustomerDefaultAddressUpdatePayload,
   CustomerAddressCreatePayload,
 } from '@shopify/hydrogen/storefront-api-types';
+import {json, redirect, type ActionFunction} from '@shopify/remix-oxygen';
 import invariant from 'tiny-invariant';
-import {Button, Text} from '~/components';
-import {assertApiErrors, getInputStyleClasses} from '~/lib/utils';
 import type {AccountOutletContext} from './($lang).account.edit';
+import {Button} from '~/components/Button';
+import {Text} from '~/components/Text';
+import {assertApiErrors, getInputStyleClasses} from '~/lib/utils';
 
 interface ActionData {
   formError?: string;

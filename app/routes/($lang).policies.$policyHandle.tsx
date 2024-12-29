@@ -1,17 +1,14 @@
-import {json} from '@shopify/remix-oxygen';
-import type {
-  MetaArgs,
-  type MetaFunction,
-  type LoaderFunctionArgs,
-} from '@shopify/remix-oxygen';
 import {useLoaderData} from '@remix-run/react';
-import {PageHeader, Section, Button} from '~/components';
-import invariant from 'tiny-invariant';
-import type {ShopPolicy} from '@shopify/hydrogen/storefront-api-types';
-import {routeHeaders, CACHE_LONG} from '~/data/cache';
-import {seoPayload} from '~/lib/seo.server';
 import type {SeoConfig} from '@shopify/hydrogen';
 import {getSeoMeta} from '@shopify/hydrogen';
+import type {ShopPolicy} from '@shopify/hydrogen/storefront-api-types';
+import {json} from '@shopify/remix-oxygen';
+import type {MetaArgs, LoaderFunctionArgs} from '@shopify/remix-oxygen';
+import invariant from 'tiny-invariant';
+import {Button} from '~/components/Button';
+import {Section, PageHeader} from '~/components/Text';
+import {routeHeaders, CACHE_LONG} from '~/data/cache';
+import {seoPayload} from '~/lib/seo.server';
 
 export const headers = routeHeaders;
 

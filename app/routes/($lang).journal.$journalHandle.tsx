@@ -1,18 +1,14 @@
-import {json} from '@shopify/remix-oxygen';
-import type {
-  MetaArgs,
-  type LinksFunction,
-  type LoaderFunctionArgs,
-} from '@shopify/remix-oxygen';
 import {useLoaderData} from '@remix-run/react';
 import type {SeoConfig} from '@shopify/hydrogen';
 import {getSeoMeta, Image} from '@shopify/hydrogen';
 import type {Blog} from '@shopify/hydrogen/storefront-api-types';
+import type {MetaArgs, LoaderFunctionArgs} from '@shopify/remix-oxygen';
+import {json} from '@shopify/remix-oxygen';
 import invariant from 'tiny-invariant';
-import {PageHeader, Section} from '~/components';
-import {seoPayload} from '~/lib/seo.server';
+import {PageHeader, Section} from '~/components/Text';
 // import styles from '../styles/custom-font.css';
 import {routeHeaders, CACHE_LONG} from '~/data/cache';
+import {seoPayload} from '~/lib/seo.server';
 
 const BLOG_HANDLE = 'Journal';
 

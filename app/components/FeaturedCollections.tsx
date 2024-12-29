@@ -1,6 +1,8 @@
 import {Image} from '@shopify/hydrogen';
 import type {Collection} from '@shopify/hydrogen/storefront-api-types';
-import {Heading, Section, Grid, Link} from '~/components';
+import {Grid} from '~/components/Grid';
+import {Link} from '~/components/Link';
+import {Heading, Section} from '~/components/Text';
 
 export function FeaturedCollections({
   collections,

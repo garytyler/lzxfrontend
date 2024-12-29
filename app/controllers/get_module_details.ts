@@ -1,17 +1,17 @@
-import type {ModuleView} from '~/views/module';
-import type {ModuleInterface} from '~/models/module';
-import type {ModuleControlInterface} from '~/models/module_control';
-import type {ModuleConnectorInterface} from '~/models/module_connector';
-import type {ModuleFeatureInterface} from '~/models/module_feature';
-import type {CompanyInterface} from '~/models/company';
-import type {PartInterface} from '~/models/part';
-import {getDataCollection, getDataDocument} from '~/lib/db.server';
 import type {AppLoadContext} from '@shopify/remix-oxygen';
-import type {ModulePartView} from '~/views/module_part';
-import type {ModuleVideoInterface} from '~/models/module_video';
-import type {ModuleAssetInterface} from '~/models/module_asset';
-import type {VideoInterface} from '~/models/video';
+import {getDataCollection, getDataDocument} from '~/lib/db.server';
 import type {AssetInterface} from '~/models/asset';
+import type {CompanyInterface} from '~/models/company';
+import type {ModuleInterface} from '~/models/module';
+import type {ModuleAssetInterface} from '~/models/module_asset';
+import type {ModuleConnectorInterface} from '~/models/module_connector';
+import type {ModuleControlInterface} from '~/models/module_control';
+import type {ModuleFeatureInterface} from '~/models/module_feature';
+import type {ModuleVideoInterface} from '~/models/module_video';
+import type {PartInterface} from '~/models/part';
+import type {VideoInterface} from '~/models/video';
+import type {ModuleView} from '~/views/module';
+import type {ModulePartView} from '~/views/module_part';
 
 export async function getModuleDetails(context: AppLoadContext, id: string) {
   const filters = {id};

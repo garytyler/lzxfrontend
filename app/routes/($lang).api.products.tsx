@@ -1,6 +1,6 @@
-import {json, type LoaderFunctionArgs} from '@shopify/remix-oxygen';
 import {flattenConnection} from '@shopify/hydrogen';
 import type {ProductConnection} from '@shopify/hydrogen/storefront-api-types';
+import {json, type LoaderFunctionArgs} from '@shopify/remix-oxygen';
 import invariant from 'tiny-invariant';
 import {PRODUCT_CARD_FRAGMENT} from '~/data/fragments';
 

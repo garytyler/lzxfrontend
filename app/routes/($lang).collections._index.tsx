@@ -1,25 +1,20 @@
-import {json} from '@shopify/remix-oxygen';
-import type {MetaArgs, type LoaderFunctionArgs} from '@shopify/remix-oxygen';
 import {useLoaderData} from '@remix-run/react';
+import type {SeoConfig} from '@shopify/hydrogen';
+import {Image, getSeoMeta} from '@shopify/hydrogen';
 import type {
   Collection,
   CollectionConnection,
 } from '@shopify/hydrogen/storefront-api-types';
-import {
-  Grid,
-  Heading,
-  PageHeader,
-  Section,
-  Link,
-  Pagination,
-  getPaginationVariables,
-  Button,
-} from '~/components';
+import {json} from '@shopify/remix-oxygen';
+import type {MetaArgs, type LoaderFunctionArgs} from '@shopify/remix-oxygen';
+import {Button} from '~/components/Button';
+import {Grid} from '~/components/Grid';
+import {Link} from '~/components/Link';
+import {Pagination, getPaginationVariables} from '~/components/Pagination';
+import {Heading, PageHeader, Section} from '~/components/Text';
+import {CACHE_LONG, routeHeaders} from '~/data/cache';
 import {getImageLoadingPriority} from '~/lib/const';
 import {seoPayload} from '~/lib/seo.server';
-import {CACHE_LONG, routeHeaders} from '~/data/cache';
-import type {SeoConfig} from '@shopify/hydrogen';
-import {Image, getSeoMeta} from '@shopify/hydrogen';
 
 const PAGINATION_SIZE = 8;
 

@@ -1,10 +1,3 @@
-import {defer} from '@shopify/remix-oxygen';
-import type {
-  MetaArgs,
-  type LinksFunction,
-  type LoaderFunctionArgs,
-  type AppLoadContext,
-} from '@shopify/remix-oxygen';
 import {
   isRouteErrorResponse,
   Links,
@@ -16,28 +9,35 @@ import {
   useMatches,
   useRouteError,
 } from '@remix-run/react';
+import type {MetaFunction} from '@remix-run/react';
 import {
   ShopifySalesChannel,
   Seo,
   getSeoMeta,
   SeoConfig,
 } from '@shopify/hydrogen';
-import {Layout} from '~/components';
+import type {Shop, Cart} from '@shopify/hydrogen/storefront-api-types';
+import {defer} from '@shopify/remix-oxygen';
+import type {
+  MetaArgs,
+  type LinksFunction,
+  type LoaderFunctionArgs,
+  type AppLoadContext,
+} from '@shopify/remix-oxygen';
+import invariant from 'tiny-invariant';
 import {GenericError} from './components/GenericError';
 import {NotFound} from './components/NotFound';
-import styles from './styles/app.css?url';
-import favicon from '~/assets/favicon.svg';
-import {seoPayload} from '~/lib/seo.server';
+import {useAnalytics} from './hooks/useAnalytics';
 import {
   DEFAULT_LOCALE,
   parseMenu,
   getCartId,
   type EnhancedMenu,
 } from './lib/utils';
-import invariant from 'tiny-invariant';
-import type {Shop, Cart} from '@shopify/hydrogen/storefront-api-types';
-import {useAnalytics} from './hooks/useAnalytics';
-import type {MetaFunction} from '@remix-run/react';
+import styles from './styles/app.css?url';
+import favicon from '~/assets/favicon.svg';
+import {Layout} from '~/components/Layout';
+import {seoPayload} from '~/lib/seo.server';
 export const links: LinksFunction = () => {
   return [
     {rel: 'stylesheet', href: styles},

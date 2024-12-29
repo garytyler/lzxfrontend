@@ -1,11 +1,13 @@
-import {useState} from 'react';
-import clsx from 'clsx';
 import type {ShopifyAnalyticsProduct} from '@shopify/hydrogen';
 import {flattenConnection, useMoney} from '@shopify/hydrogen';
-import {Text, Link, AddToCartButton} from '~/components';
-import {isDiscounted, isNewArrival} from '~/lib/utils';
-import {getProductPlaceholder} from '~/lib/placeholders';
 import type {MoneyV2, Product} from '@shopify/hydrogen/storefront-api-types';
+import clsx from 'clsx';
+import {useState} from 'react';
+import {AddToCartButton} from '~/components/AddToCartButton';
+import {Link} from '~/components/Link';
+import {Text} from '~/components/Text';
+import {getProductPlaceholder} from '~/lib/placeholders';
+import {isDiscounted, isNewArrival} from '~/lib/utils';
 
 export function ProductCardBackgroundSVG() {
   return (

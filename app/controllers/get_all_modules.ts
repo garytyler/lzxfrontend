@@ -1,8 +1,8 @@
-import type {ModuleView} from '~/views/module';
-import type {ModuleInterface} from '~/models/module';
-import type {CompanyInterface} from '~/models/company';
-import {getDataCollection} from '~/lib/db.server';
 import type {AppLoadContext} from '@shopify/remix-oxygen';
+import {getDataCollection} from '~/lib/db.server';
+import type {CompanyInterface} from '~/models/company';
+import type {ModuleInterface} from '~/models/module';
+import type {ModuleView} from '~/views/module';
 
 export async function getAllModules(context: AppLoadContext) {
   const module_datas = (await getDataCollection(context, 'Module', [

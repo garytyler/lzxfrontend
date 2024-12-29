@@ -1,6 +1,6 @@
 import type {ArtistView} from './artist';
-import type {PatchVideoView} from './patch_video';
 import type {PatchModuleView} from './patch_module';
+import type {PatchVideoView} from './patch_video';
 
 export type PatchView = {
   notes: string;

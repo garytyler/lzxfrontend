@@ -3,30 +3,11 @@
 //   type EnhancedMenuItem,
 //   useIsHomePath,
 // } from '~/lib/utils';
-import {
-  //   Drawer,
-  //   useDrawer,
-  //   Text,
-  //   Input,
-  //   IconLogin,
-  //   IconAccount,
-  //   IconBag,
-  //   IconSearch,
-  //   Heading,
-  //   IconMenu,
-  //   IconCaret,
-  //   Section,
-  //   CountrySelector,
-  Cart,
-  CartLoading,
-  //   Link,
-} from '~/components';
 import {useParams, Form, Await, useMatches} from '@remix-run/react';
 // import { useWindowScroll } from 'react-use';
 // import { Disclosure } from '@headlessui/react';
 import {Suspense, useEffect, useMemo} from 'react';
 // import { useIsHydrated } from '~/hooks/useIsHydrated';
-import {useCartFetchers} from '~/hooks/useCartFetchers';
 // import logo from '../../public/logo.svg'; // Tell webpack this JS file uses this image
 // import logodark from '../../public/logo-dark.svg'; // Tell webpack this JS file uses this image
 // import FooterMenu from './FooterMenu'

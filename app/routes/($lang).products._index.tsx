@@ -1,30 +1,22 @@
-import {json} from '@shopify/remix-oxygen';
-import type {
-  MetaArgs,
-  ActionFunctionArgs,
-  type LoaderFunctionArgs,
-} from '@shopify/remix-oxygen';
 import {useLoaderData} from '@remix-run/react';
+import type {SeoConfig} from '@shopify/hydrogen';
+import {getSeoMeta} from '@shopify/hydrogen';
 import type {
   ProductConnection,
   Collection,
 } from '@shopify/hydrogen/storefront-api-types';
+import {json} from '@shopify/remix-oxygen';
+import type {MetaArgs, LoaderFunctionArgs} from '@shopify/remix-oxygen';
 import invariant from 'tiny-invariant';
-import {
-  PageHeader,
-  Section,
-  ProductCard,
-  Grid,
-  Pagination,
-  getPaginationVariables,
-  Button,
-} from '~/components';
+import {Button} from '~/components/Button';
+import {Grid} from '~/components/Grid';
+import {Pagination, getPaginationVariables} from '~/components/Pagination';
+import {ProductCard} from '~/components/ProductCard';
+import {Section, PageHeader} from '~/components/Text';
+import {routeHeaders, CACHE_LONG} from '~/data/cache';
 import {PRODUCT_CARD_FRAGMENT} from '~/data/fragments';
 import {getImageLoadingPriority} from '~/lib/const';
 import {seoPayload} from '~/lib/seo.server';
-import {routeHeaders, CACHE_LONG} from '~/data/cache';
-import type {SeoConfig} from '@shopify/hydrogen';
-import {getSeoMeta} from '@shopify/hydrogen';
 
 const PAGE_BY = 8;
 

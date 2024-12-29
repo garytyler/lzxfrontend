@@ -1,12 +1,4 @@
-import {CartLoading, Cart} from '~/components';
 import {Await, useMatches} from '@remix-run/react';
-import {Suspense} from 'react';
-import invariant from 'tiny-invariant';
-import {
-  json,
-  type ActionArgs,
-  type AppLoadContext,
-} from '@shopify/remix-oxygen';
 import type {
   Cart as CartType,
   CartInput,
@@ -16,10 +8,19 @@ import type {
   UserError,
   CartBuyerIdentityInput,
 } from '@shopify/hydrogen/storefront-api-types';
-import {isLocalPath, getCartId} from '~/lib/utils';
+import {
+  json,
+  type ActionFunctionArgs,
+  type AppLoadContext,
+} from '@shopify/remix-oxygen';
+import {Suspense} from 'react';
+import invariant from 'tiny-invariant';
+import {Cart} from '~/components/Cart';
+import {CartLoading} from '~/components/CartLoading';
 import {CartAction, type CartActions} from '~/lib/type';
+import {isLocalPath, getCartId} from '~/lib/utils';
 
-export async function action({request, context}: ActionArgs) {
+export async function action({request, context}: ActionFunctionArgs) {
   const {session, storefront} = context;
   const headers = new Headers();
   let cartId = getCartId(request);

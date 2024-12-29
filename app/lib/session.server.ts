@@ -1,9 +1,9 @@
+import {type HydrogenSession} from '@shopify/hydrogen';
 import {
   createCookieSessionStorage,
   type SessionStorage,
   type Session,
 } from '@shopify/remix-oxygen';
-import {type HydrogenSession} from '@shopify/hydrogen';
 
 /**
  * This is a custom session implementation for your Hydrogen shop.

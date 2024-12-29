@@ -1,24 +1,22 @@
-import clsx from 'clsx';
-import {useRef} from 'react';
-import {useScroll} from 'react-use';
+import {useFetcher} from '@remix-run/react';
 import {flattenConnection, Image, Money} from '@shopify/hydrogen';
-import {
-  Button,
-  Heading,
-  IconRemove,
-  Text,
-  Link,
-  FeaturedProducts,
-} from '~/components';
-import {getInputStyleClasses} from '~/lib/utils';
 import type {
   Cart as CartType,
   CartCost,
   CartLine,
   CartLineUpdateInput,
 } from '@shopify/hydrogen/storefront-api-types';
-import {useFetcher} from '@remix-run/react';
+import clsx from 'clsx';
+import {useRef} from 'react';
+import {useScroll} from 'react-use';
+import {Button} from '~/components/Button';
+import {FeaturedProducts} from '~/components/FeaturedProducts';
+import {IconRemove} from '~/components/Icon';
+import {Link} from '~/components/Link';
+import {Heading, Text} from '~/components/Text';
+
 import {CartAction} from '~/lib/type';
+import {getInputStyleClasses} from '~/lib/utils';
 
 type Layouts = 'page' | 'drawer';
 

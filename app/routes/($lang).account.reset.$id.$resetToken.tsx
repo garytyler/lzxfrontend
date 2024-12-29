@@ -1,8 +1,8 @@
-import {json, redirect, type ActionFunction} from '@shopify/remix-oxygen';
 import {Form, useActionData, type V2_MetaFunction} from '@remix-run/react';
+import type {CustomerResetPayload} from '@shopify/hydrogen/storefront-api-types';
+import {json, redirect, type ActionFunction} from '@shopify/remix-oxygen';
 import {useRef, useState} from 'react';
 import {getInputStyleClasses} from '~/lib/utils';
-import type {CustomerResetPayload} from '@shopify/hydrogen/storefront-api-types';
 
 type ActionData = {
   formError?: string;

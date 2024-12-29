@@ -1,6 +1,6 @@
 import {redirect, type LoaderFunctionArgs} from '@shopify/remix-oxygen';
-import {getCartId} from '~/lib/utils';
 import {cartCreate, cartDiscountCodesUpdate} from './($lang).cart';
+import {getCartId} from '~/lib/utils';
 
 /**
  * Automatically applies a discount found on the url

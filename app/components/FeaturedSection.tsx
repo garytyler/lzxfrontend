@@ -1,6 +1,6 @@
-import {useEffect} from 'react';
 import {useFetcher} from '@remix-run/react';
 import type {Collection, Product} from '@shopify/hydrogen/storefront-api-types';
+import {useEffect} from 'react';
 import {FeaturedCollections} from './FeaturedCollections';
 import {ProductSwimlane} from './ProductSwimlane';
 import {usePrefixPathWithLocale} from '~/lib/utils';

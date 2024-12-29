@@ -1,24 +1,25 @@
-import {json} from '@shopify/remix-oxygen';
-import type {MetaArgs, type LoaderFunctionArgs} from '@shopify/remix-oxygen';
 import {useLoaderData} from '@remix-run/react';
-import type {
-  Collection as CollectionType,
-  CollectionConnection,
-  Filter,
-} from '@shopify/hydrogen/storefront-api-types';
 import type {SeoConfig} from '@shopify/hydrogen';
 import {
   flattenConnection,
   AnalyticsPageType,
   getSeoMeta,
 } from '@shopify/hydrogen';
+import type {
+  Collection as CollectionType,
+  CollectionConnection,
+  Filter,
+} from '@shopify/hydrogen/storefront-api-types';
+import {json} from '@shopify/remix-oxygen';
+import type {MetaArgs, type LoaderFunctionArgs} from '@shopify/remix-oxygen';
 import invariant from 'tiny-invariant';
-import {PageHeader, Section, Text, SortFilter} from '~/components';
 import {ProductGrid} from '~/components/ProductGrid';
-import {PRODUCT_CARD_FRAGMENT} from '~/data/fragments';
-import {CACHE_LONG, routeHeaders} from '~/data/cache';
-import {seoPayload} from '~/lib/seo.server';
+import {SortFilter} from '~/components/SortFilter';
 import type {AppliedFilter, SortParam} from '~/components/SortFilter';
+import {PageHeader, Section, Text} from '~/components/Text';
+import {CACHE_LONG, routeHeaders} from '~/data/cache';
+import {PRODUCT_CARD_FRAGMENT} from '~/data/fragments';
+import {seoPayload} from '~/lib/seo.server';
 
 export const headers = routeHeaders;
 

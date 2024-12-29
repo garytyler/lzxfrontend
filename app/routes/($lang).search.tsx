@@ -1,30 +1,25 @@
-import {defer} from '@shopify/remix-oxygen';
-import type {
-  MetaArgs,
-  type LoaderFunctionArgs,
-  type SerializeFrom,
-} from '@shopify/remix-oxygen';
+import {Await, Form, useLoaderData} from '@remix-run/react';
 import type {SeoConfig} from '@shopify/hydrogen';
 import {flattenConnection, getSeoMeta} from '@shopify/hydrogen';
-import {Await, Form, useLoaderData} from '@remix-run/react';
 import type {
   Collection,
   CollectionConnection,
   Product,
   ProductConnection,
 } from '@shopify/hydrogen/storefront-api-types';
+import {defer} from '@shopify/remix-oxygen';
+import type {
+  MetaArgs,
+  type LoaderFunctionArgs,
+  type SerializeFrom,
+} from '@shopify/remix-oxygen';
 import {Suspense} from 'react';
 import invariant from 'tiny-invariant';
-import {
-  Heading,
-  Input,
-  PageHeader,
-  ProductGrid,
-  ProductSwimlane,
-  FeaturedCollections,
-  Section,
-  Text,
-} from '~/components';
+import {FeaturedCollections} from '~/components/FeaturedCollections';
+import {Input} from '~/components/Input';
+import {ProductGrid} from '~/components/ProductGrid';
+import {ProductSwimlane} from '~/components/ProductSwimlane';
+import {Heading, Section, Text, PageHeader} from '~/components/Text';
 import {PRODUCT_CARD_FRAGMENT} from '~/data/fragments';
 import {PAGINATION_SIZE} from '~/lib/const';
 import {seoPayload} from '~/lib/seo.server';

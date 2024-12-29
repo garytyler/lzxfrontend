@@ -3,7 +3,9 @@ import type {
   Customer,
   MailingAddress,
 } from '@shopify/hydrogen/storefront-api-types';
-import {Button, Link, Text} from '~/components';
+import {Link} from './Link';
+import {Button} from '~/components/Button';
+import {Text} from '~/components/Text';
 
 export function AccountAddressBook({
   customer,
@@ -18,7 +20,7 @@ export function AccountAddressBook({
         <h3 className="font-bold text-lead">Address Book</h3>
         <div>
           {!addresses?.length && (
-            <Text className="mb-1" width="narrow" as="p" size="copy">
+            <Text className="mb-1" as="p" size="copy">
               You haven&apos;t saved any addresses yet.
             </Text>
           )}

@@ -1,9 +1,9 @@
-import ModalImage from 'react-modal-image';
-import {Section, Grid, Text, Link} from '~/components';
-import {getAllPatches} from '~/controllers/get_all_patches';
-import {PatchView} from '~/views/patch';
-import type {LoaderFunctionArgs} from '@shopify/remix-oxygen';
 import {useLoaderData} from '@remix-run/react';
+import type {LoaderFunctionArgs} from '@shopify/remix-oxygen';
+import ModalImage from 'react-modal-image';
+import {Grid} from '~/components/Grid';
+import {Section, Text} from '~/components/Text';
+import {getAllPatches} from '~/controllers/get_all_patches';
 
 export async function loader({params, request, context}: LoaderFunctionArgs) {
   const patchData = await getAllPatches(context);

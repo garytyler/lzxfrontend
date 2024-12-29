@@ -1,12 +1,12 @@
-import {useEffect, useMemo, useState} from 'react';
+import {useNavigation, useLocation, useNavigate} from '@remix-run/react';
 import type {
   Maybe,
   PageInfo,
   ProductConnection,
 } from '@shopify/hydrogen/storefront-api-types';
+import {useEffect, useMemo, useState} from 'react';
 
 import {useInView, type IntersectionOptions} from 'react-intersection-observer';
-import {useNavigation, useLocation, useNavigate} from '@remix-run/react';
 
 type Connection = {
   nodes: ProductConnection['nodes'] | any[];

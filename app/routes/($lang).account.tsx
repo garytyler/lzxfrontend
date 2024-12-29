@@ -6,24 +6,13 @@ import {
   useMatches,
   useOutlet,
 } from '@remix-run/react';
+import {flattenConnection} from '@shopify/hydrogen';
 import type {
   Collection,
   Customer,
   MailingAddress,
   Order,
 } from '@shopify/hydrogen/storefront-api-types';
-import {Suspense} from 'react';
-import {
-  Button,
-  OrderCard,
-  PageHeader,
-  Text,
-  AccountDetails,
-  AccountAddressBook,
-  Modal,
-  ProductSwimlane,
-} from '~/components';
-import {FeaturedCollections} from '~/components/FeaturedCollections';
 import {
   json,
   defer,
@@ -31,11 +20,19 @@ import {
   type LoaderFunctionArgs,
   type AppLoadContext,
 } from '@shopify/remix-oxygen';
-import {flattenConnection} from '@shopify/hydrogen';
-import {getFeaturedData} from './($lang).featured-products';
+import {Suspense} from 'react';
 import {doLogout} from './($lang).account.logout';
-import {usePrefixPathWithLocale} from '~/lib/utils';
+import {getFeaturedData} from './($lang).featured-products';
+import {AccountAddressBook} from '~/components/AccountAddressBook';
+import {AccountDetails} from '~/components/AccountDetails';
+import {Button} from '~/components/Button';
+import {OrderCard} from '~/components/OrderCard';
+import {Text, PageHeader} from '~/components/Text';
+import {Modal} from '~/components/Modal';
+import {ProductSwimlane} from '~/components/ProductSwimlane';
+import {FeaturedCollections} from '~/components/FeaturedCollections';
 import {CACHE_NONE, routeHeaders} from '~/data/cache';
+import {usePrefixPathWithLocale} from '~/lib/utils';
 
 // Combining json + Response + defer in a loader breaks the
 // types returned by useLoaderData. This is a temporary fix.

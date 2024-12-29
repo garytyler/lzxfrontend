@@ -1,20 +1,20 @@
 import {
+  Form,
+  useActionData,
+  useLoaderData,
+  type V2_MetaFunction,
+} from '@remix-run/react';
+import type {CustomerAccessTokenCreatePayload} from '@shopify/hydrogen/storefront-api-types';
+import {
   json,
   redirect,
   type ActionFunction,
   type AppLoadContext,
   type LoaderFunctionArgs,
 } from '@shopify/remix-oxygen';
-import {
-  Form,
-  useActionData,
-  useLoaderData,
-  type V2_MetaFunction,
-} from '@remix-run/react';
 import {useState} from 'react';
+import {Link} from '~/components/Link';
 import {getInputStyleClasses} from '~/lib/utils';
-import {Link} from '~/components';
-import type {CustomerAccessTokenCreatePayload} from '@shopify/hydrogen/storefront-api-types';
 
 export const handle = {
   isPublic: true,

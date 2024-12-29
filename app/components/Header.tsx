@@ -1,4 +1,3 @@
-import Logo from './Logo';
 import {
   FaList,
   FaShoppingCart,
@@ -11,6 +10,7 @@ import {
   FaFacebook,
 } from 'react-icons/fa';
 import {MdForum} from 'react-icons/md';
+import Logo from './Logo';
 
 export function Header({
   cartCount = 13,

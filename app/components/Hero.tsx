@@ -1,5 +1,3 @@
-import clsx from 'clsx';
-import type {SerializeFrom} from '@shopify/remix-oxygen';
 import {MediaFile} from '@shopify/hydrogen';
 import type {
   MediaImage,
@@ -7,7 +5,10 @@ import type {
   Metafield,
   Video as MediaVideo,
 } from '@shopify/hydrogen/storefront-api-types';
-import {Heading, Text, Link} from '~/components';
+import type {SerializeFrom} from '@shopify/remix-oxygen';
+import clsx from 'clsx';
+import {Link} from '~/components/Link';
+import {Heading, Text} from '~/components/Text';
 
 export interface CollectionHero {
   byline: Metafield;
@@ -34,7 +35,7 @@ export function Hero({
   spread,
   spreadSecondary,
   top,
-}: CollectionHero) {
+}: SerializeFrom<CollectionHero>) {
   return (
     <section className="px-4 w-full">
       <Heading format as="h2" size="display" className="w-full max-w-max">

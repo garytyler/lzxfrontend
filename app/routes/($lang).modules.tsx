@@ -1,11 +1,11 @@
 import {useLoaderData, Link} from '@remix-run/react';
 import type {LoaderFunctionArgs} from '@shopify/remix-oxygen';
-import {getAllModules} from '~/controllers/get_all_modules';
-import {ModuleView} from '~/views/module';
-import {Section} from '~/components/Text';
-import IconLink from '~/components/IconLink';
-import {routeHeaders, CACHE_LONG} from '~/data/cache';
 import {BsCheckSquareFill} from 'react-icons/bs';
+import IconLink from '~/components/IconLink';
+import {Section} from '~/components/Text';
+import {getAllModules} from '~/controllers/get_all_modules';
+import {routeHeaders, CACHE_LONG} from '~/data/cache';
+import {ModuleView} from '~/views/module';
 export const headers = routeHeaders;
 
 export async function loader({params, request, context}: LoaderFunctionArgs) {

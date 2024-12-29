@@ -1,4 +1,3 @@
-import Logo from './Logo';
 import {
   FaInstagram,
   FaDiscord,
@@ -6,8 +5,9 @@ import {
   FaYoutube,
   FaFacebook,
 } from 'react-icons/fa';
-import {CountrySelector} from './CountrySelector';
 import MailchimpSubscribe from 'react-mailchimp-subscribe';
+import {CountrySelector} from './CountrySelector';
+import Logo from './Logo';
 
 export function Footer() {
   const iconSize = 24;

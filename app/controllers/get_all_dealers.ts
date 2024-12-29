@@ -1,5 +1,5 @@
-import {getDataCollection} from '~/lib/db.server';
 import type {AppLoadContext} from '@shopify/remix-oxygen';
+import {getDataCollection} from '~/lib/db.server';
 import type {DealerInterface} from '~/models/dealer';
 import type {DealerView} from '~/views/dealer';
 
