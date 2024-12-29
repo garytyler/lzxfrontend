@@ -37,6 +37,7 @@ export default defineConfig({
        * @see https://vitejs.dev/config/dep-optimization-options
        */
       include: [
+        '@remix-run/dev/server-build',
         'ts-easing',
         'fast-shallow-equal',
         'screenfull',
