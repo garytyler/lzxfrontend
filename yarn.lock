@@ -7535,7 +7535,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-plugin-import@npm:^2.27.5":
+"eslint-plugin-import@npm:^2.27.5, eslint-plugin-import@npm:^2.31.0":
   version: 2.31.0
   resolution: "eslint-plugin-import@npm:2.31.0"
   dependencies:
@@ -10327,6 +10327,7 @@ __metadata:
     daisyui: "npm:^2.51.6"
     eslint: "npm:^8.20.0"
     eslint-plugin-hydrogen: "npm:0.12.2"
+    eslint-plugin-import: "npm:^2.31.0"
     isbot: "npm:^3.8.0"
     less: "npm:^4.2.1"
     postcss: "npm:^8.4.21"
