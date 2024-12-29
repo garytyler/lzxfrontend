@@ -3,7 +3,7 @@
 
 name: Storefront 950295
 on:
-- push
+  - push
 permissions:
   contents: read
   deployments: write
@@ -13,26 +13,33 @@ jobs:
     timeout-minutes: 30
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v4
-    - name: Setup node.js
-      uses: actions/setup-node@v4
-      with:
-        node-version: lts/*
-        check-latest: true
-    - name: Get yarn cache directory
-      id: yarn-cache-dir-path
-      run: echo "dir=$(yarn cache dir)" >> $GITHUB_OUTPUT
-    - uses: actions/cache@v3
-      with:
-        path: "${{ steps.yarn-cache-dir-path.outputs.dir }}"
-        key: "${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}"
-        restore-keys: "${{ runner.os }}-yarn-\n"
-    - name: Install dependencies
-      id: install-dependencies
-      run: yarn
-    - name: Build and Publish to Oxygen
-      id: deploy
-      run: npx shopify hydrogen deploy --build-command "yarn build"
-      env:
-        SHOPIFY_HYDROGEN_DEPLOYMENT_TOKEN: "${{ secrets.OXYGEN_DEPLOYMENT_TOKEN_950295 }}"
-
+      - uses: actions/checkout@v4
+      - name: Setup node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: lts/*
+          check-latest: true
+      - name: Enable Corepack
+        run: corepack enable
+      - name: Install configured package manager
+        run: corepack install
+      - name: Set yarn version to 4.5.3
+        run: yarn set version 4.5.3
+      - name: Verify Yarn version
+        run: yarn --version
+      - name: Get yarn cache directory
+        id: yarn-cache-dir-path
+        run: echo "dir=$(yarn cache dir)" >> $GITHUB_OUTPUT
+      - uses: actions/cache@v3
+        with:
+          path: '${{ steps.yarn-cache-dir-path.outputs.dir }}'
+          key: "${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}"
+          restore-keys: "${{ runner.os }}-yarn-\n"
+      - name: Install dependencies
+        id: install-dependencies
+        run: yarn
+      - name: Build and Publish to Oxygen
+        id: deploy
+        run: npx shopify hydrogen deploy --build-command "yarn build"
+        env:
+          SHOPIFY_HYDROGEN_DEPLOYMENT_TOKEN: '${{ secrets.OXYGEN_DEPLOYMENT_TOKEN_950295 }}'
