@@ -1,8 +1,9 @@
 import React, {useState, useEffect} from 'react';
 import {TbRectangleFilled} from 'react-icons/tb';
+import ImageCroppedByTransparency from './ImageCroppedByTransparency';
+import MarkdownContent from './MarkdownContent';
 import {ModuleLegendPanel} from './ModuleLegendPanel';
 import type {ModuleView} from '~/views/module';
-import ImageCroppedByTransparency from './ImageCroppedByTransparency';
 
 interface MediaItem {
   name: string;
@@ -571,6 +572,14 @@ export function ModuleDetails({
               })
             : ''}
         </article>
+        <div>
+          <h1>Documentation</h1>
+          <MarkdownContent
+            urls={[
+              'https://raw.githubusercontent.com/lzxindustries/lzxdocs/master/blog/2024-05-18-chromagnon-box/index.md',
+            ]}
+          />
+        </div>
       </div>
     </div>
   );

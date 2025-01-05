@@ -34,6 +34,8 @@ import {MEDIA_FRAGMENT, PRODUCT_CARD_FRAGMENT} from '~/data/fragments';
 import {seoPayload} from '~/lib/seo.server.js';
 import type {ModuleView} from '~/views/module.js';
 
+
+
 export async function loader({params, request, context}: LoaderFunctionArgs) {
   const {productHandle} = params;
   invariant(productHandle, 'Missing productHandle param, check route filename');

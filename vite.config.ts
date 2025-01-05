@@ -24,6 +24,18 @@ export default defineConfig({
     // withtout inlining assets as base64:
     assetsInlineLimit: 0,
   },
+  // resolve: {
+  //   alias: {
+  //     buffer: 'buffer',
+  //   },
+  // },
+  // define: {
+  //   Buffer: 'buffer.Buffer', // Use string reference to buffer.Buffer
+  //   global: 'window', // Reference the window object for global
+  // },
+  // optimizeDeps: {
+  //   include: ['style-to-object'],
+  // },
   ssr: {
     optimizeDeps: {
       /**
@@ -37,6 +49,8 @@ export default defineConfig({
        * @see https://vitejs.dev/config/dep-optimization-options
        */
       include: [
+        'extend',
+        'debug',
         '@remix-run/dev/server-build',
         'ts-easing',
         'fast-shallow-equal',
@@ -52,6 +66,7 @@ export default defineConfig({
         'prop-types',
         'typographic-base',
         'react-universal-interface',
+        'style-to-object',
       ],
     },
   },
